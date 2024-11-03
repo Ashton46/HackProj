@@ -1,0 +1,47 @@
+.Title { 
+    font-size: 50px;
+    text-align: center;
+    margin:auto;
+    padding-bottom: 3ch;
+    border: 0;
+    color: #0C5EAE;
+    font-family: 'Segoe UI';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background: #9fc2e4;
+   
+}
+
+#top {
+    background: #ffffff;
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+    margin: 20px auto; 
+}
+
+#bottom{
+    background: #e7eff8dd;
+    padding: 25px; 
+    border-radius: 15px; 
+    max-width: 600px; 
+    margin: 20px auto; 
+    border: 5px  #aad1f5; 
+    box-shadow: 0 10px 10px color#ffffff; 
+}
+
+
+ul {
+    list-style-type: none;
+}

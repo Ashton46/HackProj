@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route  path = "landing" element = {<Landing/>}/>
+        <Route  path = "Landing" element = {<Landing/>}/>
         <Route  path = "todo" element = {<TODO/>}/>
 
       </Routes>

@@ -1,7 +1,7 @@
-import react, {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import SidebarComponent from "./components/Sidebar";
 import Modal from 'react-modal';
-
+import './to-do.css';
 
 
 const TODO = () => {
@@ -44,8 +44,6 @@ const TODO = () => {
             console.log(sortedTasks);
         }
     };
-
-
     // Calculate remaining time
     const calculateRemainingTime = (dueDate) => {
         const now = Date.now();
@@ -87,13 +85,13 @@ const TODO = () => {
     function closeModal() {
       setIsOpen(false);
     }
-  
+    
     return (
         <div style={{ display: "flex" }}>
             <SidebarComponent />
             <div style={{ flex: 1, padding: "40px" }}>
-                <h1>To-Do List</h1> 
-                <button className = "Box1" type="button">Add Task</button>
+                <h1 className = "Title" >To-Do List</h1> 
+                <button type="button">Sort</button>
         <Modal 
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -101,7 +99,7 @@ const TODO = () => {
                 contentLabel="Example Modal"
             >
         </Modal>
-                <div>
+                <div id="top">
                     <label>Course:</label>
                     <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)}>
                         {courses.map((course, index) => (
@@ -115,7 +113,7 @@ const TODO = () => {
                         value={assignment}
                         onChange={(e) => setAssignment(e.target.value)}
                     />
-
+                    <br />
                     <label>Progress:</label>
                     <div style={{ display: "flex", alignItems: "center" }}>
                         <input
@@ -128,7 +126,7 @@ const TODO = () => {
                             style={{
                                 appearance: 'none',
                                 width: '100px',
-                                background: `linear-gradient(to right, #8758FF ${progress}%, #ebe9e7 ${progress}%)`
+                                background: `linear-gradient(to right, #ffc926 ${progress}%, #1c41c7 ${progress}%)`
                             }}
                         />
                         <span className="value" style={{ marginLeft: '10px' }}>
@@ -153,23 +151,27 @@ const TODO = () => {
                     <button onClick={addTask}>Add Task</button>
                 </div>
 
-
-
+            <div style={{ marginBottom: '0px' }}>
+             </div> 
                 <h2>Tasks</h2>
                 <ul>
-                    {tasks.map((task, index) => (
-                        <li key={index} style={{ marginBottom: "10px" }}>
+                {tasks.map((task, index) => (
+                    <li key={index} style={{ marginBottom: "2px" }}>
+                        <div id="bottom">
+                            <strong>{task.assignment}</strong> - <span style={{ backgroundColor: '#ffffff', padding: '2px 5px', borderRadius: '3px' }}>{task.course}</span>
                             <div>
-                                <strong>{task.assignment}</strong> - {task.course}
-                                <div>
-                                    Time Left: {countdowns[index] ? 
-                                        `${countdowns[index].hours}h ${countdowns[index].minutes}m ${countdowns[index].seconds}s` : 
-                                        "Calculating..."}
-                                </div>
-                                <div>Progress: {task.progress}%</div>
-                                <div>Priority: {task.priority}</div>
-                            </div>
-                        </li>
+                                <span style={{ backgroundColor: '#ffffff', padding: '2px 5px', borderRadius: '3px' }}>Time Left:</span> {countdowns[index] ? 
+                                    `${countdowns[index].hours}h ${countdowns[index].minutes}m ${countdowns[index].seconds}s` : 
+                                    "Calculating..."}
+                        </div>
+                        <div>
+                            <span style={{ backgroundColor: '#ffffff', padding: '2px 5px', borderRadius: '3px' }}>Progress:</span> {task.progress}%
+                        </div>
+                        <div>
+                            <span style={{ backgroundColor: '#ffffff', padding: '2px 5px', borderRadius: '3px' }}>Priority:</span> {task.priority}
+                             </div>
+                         </div>
+                    </li>
                     ))}
                 </ul>
             </div>
@@ -178,6 +180,3 @@ const TODO = () => {
 };    
 
 export default TODO;
-
-
-

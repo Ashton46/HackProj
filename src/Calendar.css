@@ -1,0 +1,18 @@
+.calendar-container {
+    width: 60%;          
+}
+
+.container {
+    display: flex;
+    align-items: flex-start; 
+}
+  
+.calendar-container {
+    flex: 1; 
+}
+  
+.dropdown-container {
+    margin-left: 20px;
+    width: 200px; 
+}
+  

@@ -17,14 +17,14 @@ function Landing() {
         <h1 className = "Title">
            ZotPlanner</h1>
 
-    <button className = "Box1" type="button" onClick="window.location.href='/calendar;">
-    Box2
+    <button className = "Box1" type="button" onClick={() =>window.location.href = 'http://localhost:3001/calender'}>
+    Schedule 
   </button>
-  <button className = "Box2" type="button" onClick={() =>window.location.href = 'http://localhost:3002/todo'}>
-    Box1
+  <button className = "Box2" type="button" onClick={() =>window.location.href = 'http://localhost:3001/todo'}>
+    assignments to do 
   </button>
   <button className = "Box3" type="button" onClick="window.location.href='/calendar;">
-    Box 3
+    profile
   </button>
   </div>
   );

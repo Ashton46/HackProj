@@ -1,7 +1,7 @@
 .Calendar {
     width: 1080px;
     height: 1000px;
-    border: 20px solid #0C5EAE  ;
+    border: 20px solid #9fc2e4  ;
     color: white;
 }
 
@@ -11,7 +11,7 @@
     margin:auto;
     padding-bottom: 3ch;
     border: 0;
-    color: whitesmoke;
+    color: #0C5EAE;
     font-family: 'Segoe UI';
 }
 
@@ -19,7 +19,8 @@
     
     height: 100vh;
     width: 200vh;
-    background-color: #0C5EAE;
+    background-color: #9fc2e4 ;
+    
 }
 
 .Box1 {
